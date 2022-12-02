@@ -261,7 +261,8 @@ class Bertram(BertPreTrainedModel):
             sequence_output, _ = self.transformer(
                 input_ids=input_ids,
                 token_type_ids=token_type_ids,
-                attention_mask=attention_mask
+                attention_mask=attention_mask,
+                return_dict=False
             )
             self.transformer.embeddings.word_embeddings.overwrite_fct = None
 
